@@ -153,7 +153,7 @@ You can get more detailed information from OAP each module below.</p>
 </li>
 <li>
 <p><strong>Requirements for Shuffle Remote PMem Extension</strong><br />
-If enable Shuffle Remote PMem extension with RDMA, you can refer to <a href="../oap-shuffle/RPMem-shuffle/README.md">Shuffle Remote PMem Extension Guide</a> to configure and validate RDMA in advance.</p>
+If enable Shuffle Remote PMem extension with RDMA, you can refer to <a href="https://github.com/oap-project/pmem-shuffle">PMem Shuffle</a> to configure and validate RDMA in advance.</p>
 </li>
 </ul>
 <p>We provide scripts below to help automatically install dependencies above <strong>except RDMA</strong>, need change to <strong>root</strong> account, run:</p>
@@ -192,7 +192,7 @@ $ source /tmp/oneCCL/build/_install/env/setvars.sh
 </code></pre>
 <h3 id="building-sql-index-and-data-source-cache-with-pmem">Building SQL Index and Data Source Cache with PMem</h3>
 <h4 id="prerequisites-for-building-with-pmem-support">Prerequisites for building with PMem support</h4>
-<p>When using SQL Index and Data Source Cache with PMem, finish steps of <a href="#Prerequisites-for-building">Prerequisites for building</a> to ensure needed dependencies have been installed.</p>
+<p>When using SQL Index and Data Source Cache with PMem, finish steps of <a href="#prerequisites-for-building">Prerequisites for building</a> to ensure needed dependencies have been installed.</p>
 <h4 id="building-package">Building package</h4>
 <p>You can build OAP with PMem support with command below:</p>
 <pre><code>$ sh $OAP_HOME/dev/compile-oap.sh
