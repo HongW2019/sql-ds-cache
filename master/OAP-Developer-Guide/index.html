@@ -1,141 +1,127 @@
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  
-  
-  <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>OAP Developer Guide - SQL DS Cache - master</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>OAP Developer Guide - SQL DS Cache</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../extra.css" rel="stylesheet">
 
-  <link rel="stylesheet" href="../css/theme.css" />
-  <link rel="stylesheet" href="../css/theme_extra.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
-  
-  <script>
-    // Current page data
-    var mkdocs_page_name = "OAP Developer Guide";
-    var mkdocs_page_input_path = "OAP-Developer-Guide.md";
-    var mkdocs_page_url = null;
-  </script>
-  
-  <script src="../js/jquery-2.1.1.min.js" defer></script>
-  <script src="../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script> 
-  
-</head>
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-<body class="wy-body-for-nav" role="document">
+            ga('create', 'UA-125166209-1', 'oap-project.github.io');
+            ga('send', 'pageview');
+        </script> 
+    </head>
 
-  <div class="wy-grid-for-nav">
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">SQL DS Cache</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-    
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-    <div class="wy-side-scroll">
-      <div class="wy-side-nav-search">
-        <a href=".." class="icon icon-home"> SQL DS Cache - master</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
-  </form>
-</div>
-      </div>
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../User-Guide/" class="nav-link">User Guide</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../Advanced-Configuration/" class="nav-link">Advanced Configuration</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../OAP-Installation-Guide/" class="nav-link">OAP Installation Guide</a>
+                            </li>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">OAP Developer Guide</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../Developer-Guide/" class="nav-link">Developer Guide</a>
+                            </li>
+                        </ul>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../User-Guide/">User Guide</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../Advanced-Configuration/">Advanced Configuration</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../OAP-Installation-Guide/">OAP Installation Guide</a>
-                    </li>
-                </ul>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">OAP Developer Guide</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#building-oap">Building OAP</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#prerequisites-for-building">Prerequisites for Building</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#building">Building</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#running-oap-unit-tests">Running OAP Unit Tests</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#building-sql-index-and-data-source-cache-with-pmem">Building SQL Index and Data Source Cache with PMem</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#prerequisites-for-building-with-pmem-support">Prerequisites for building with PMem support</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#building-package">Building package</a>
-    </li>
-        </ul>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#contributing">Contributing</a>
-    </li>
-    </ul>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../Developer-Guide/">Developer Guide</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="" href="../../">Version Selector</a>
-                    </li>
-                </ul>
-      </div>
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../OAP-Installation-Guide/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../Developer-Guide/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/oap-project/sql-ds-cache.git/edit/master/docs/OAP-Developer-Guide.md" class="nav-link">Edit on Fork on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
     </div>
-    </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="..">SQL DS Cache - master</a>
-      </nav>
-
-      
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="..">Docs</a> &raquo;</li>
     
-      
-    
-    <li>OAP Developer Guide</li>
-    <li class="wy-breadcrumbs-aside">
-      
-    </li>
-  </ul>
-  
-  <hr/>
-</div>
-          <div role="main">
-            <div class="section">
-              
-                <h1 id="oap-developer-guide">OAP Developer Guide</h1>
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#oap-developer-guide" class="nav-link">OAP Developer Guide</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#building-oap" class="nav-link">Building OAP</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="oap-developer-guide">OAP Developer Guide</h1>
 <p>This document contains the instructions &amp; scripts on installing necessary dependencies and building OAP. 
 You can get more detailed information from OAP each module below.</p>
 <ul>
-<li><a href="https://github.com/oap-project/sql-ds-cache/blob/master/docs/Developer-Guide.md">SQL Index and Data Source Cache</a></li>
-<li><a href="https://github.com/oap-project/pmem-common">PMem Common</a></li>
-<li><a href="https://github.com/oap-project/pmem-shuffle#5-install-dependencies-for-shuffle-remote-pmem-extension">PMem Shuffle</a></li>
-<li><a href="https://github.com/oap-project/remote-shuffle">Remote Shuffle</a></li>
-<li><a href="https://github.com/oap-project/oap-mllib">OAP MLlib</a></li>
-<li><a href="https://github.com/oap-project/arrow-data-source">Arrow Data Source</a></li>
-<li><a href="https://github.com/oap-project/native-sql-engine">Native SQL Engine</a></li>
+<li><a href="https://oap-project.github.io/sql-ds-cache/">SQL DS Cache</a></li>
+<li><a href="https://oap-project.github.io/pmem-common">PMem Common</a></li>
+<li><a href="https://oap-project.github.io/pmem-spill">PMem Spill</a></li>
+<li><a href="https://oap-project.github.io/pmem-shuffle">PMem Shuffle</a></li>
+<li><a href="https://oap-project.github.io/remote-shuffle">Remote Shuffle</a></li>
+<li><a href="https://oap-project.github.io/oap-mllib">OAP MLlib</a></li>
+<li><a href="https://oap-project.github.io/arrow-data-source">Arrow Data Source</a></li>
+<li><a href="https://oap-project.github.io/native-sql-engine">Native SQL Engine</a></li>
 </ul>
 <h2 id="building-oap">Building OAP</h2>
 <h3 id="prerequisites-for-building">Prerequisites for Building</h3>
@@ -143,7 +129,7 @@ You can get more detailed information from OAP each module below.</p>
 <ul>
 <li><a href="https://help.directadmin.com/item.php?id=494">Cmake</a></li>
 <li><a href="https://gcc.gnu.org/wiki/InstallingGCC">GCC &gt; 7</a></li>
-<li><a href="https://github.com/memkind/memkind/tree/v1.10.1-rc2">Memkind</a></li>
+<li><a href="https://github.com/memkind/memkind/tree/v1.10.1">Memkind</a></li>
 <li><a href="https://github.com/pmem/vmemcache">Vmemcache</a></li>
 <li><a href="https://github.com/Intel-bigdata/HPNL">HPNL</a></li>
 <li><a href="https://github.com/pmem/pmdk">PMDK</a>  </li>
@@ -152,128 +138,109 @@ You can get more detailed information from OAP each module below.</p>
 <p><a href="https://github.com/Intel-bigdata/arrow">Arrow</a></p>
 </li>
 <li>
-<p><strong>Requirements for Shuffle Remote PMem Extension</strong><br />
-If enable Shuffle Remote PMem extension with RDMA, you can refer to <a href="https://github.com/oap-project/pmem-shuffle">PMem Shuffle</a> to configure and validate RDMA in advance.</p>
+<p><strong>Requirements for PMem Shuffle</strong></p>
 </li>
 </ul>
+<p>If enable PMem Shuffle with RDMA, you can refer to <a href="https://oap-project.github.io/pmem-shuffle">PMem Shuffle</a> to configure and validate RDMA in advance.</p>
 <p>We provide scripts below to help automatically install dependencies above <strong>except RDMA</strong>, need change to <strong>root</strong> account, run:</p>
-<pre><code># git clone -b &lt;tag-version&gt; https://github.com/Intel-bigdata/OAP.git
-# cd OAP
-# sh $OAP_HOME/dev/install-compile-time-dependencies.sh
+<pre><code># git clone -b &lt;version&gt; https://github.com/oap-project/oap-tools.git
+# cd oap-tools
+# sh dev/install-compile-time-dependencies.sh
 </code></pre>
+
 <p>Run the following command to learn more.</p>
-<pre><code># sh $OAP_HOME/dev/scripts/prepare_oap_env.sh --help
+<pre><code># sh dev/scripts/prepare_oap_env.sh --help
 </code></pre>
+
 <p>Run the following command to automatically install specific dependency such as Maven.</p>
-<pre><code># sh $OAP_HOME/dev/scripts/prepare_oap_env.sh --prepare_maven
+<pre><code># sh dev/scripts/prepare_oap_env.sh --prepare_maven
 </code></pre>
+
 <h3 id="building">Building</h3>
-<p>To build OAP package, run command below then you can find a tarball named <code>oap-$VERSION-bin-spark-$VERSION.tar.gz</code> under directory <code>$OAP_HOME/dev/release-package</code>.</p>
-<pre><code>$ sh $OAP_HOME/dev/compile-oap.sh
+<p>To build OAP package, run command below then you can find a tarball named <code>oap-$VERSION-bin-spark-$VERSION.tar.gz</code> under directory <code>$OAP_TOOLS_HOME/dev/release-package</code>.</p>
+<pre><code>$ sh $OAP_TOOLS_HOME/dev/compile-oap.sh
 </code></pre>
-<p>Building Specified OAP Module, such as <code>oap-cache</code>, run:</p>
-<pre><code>$ sh $OAP_HOME/dev/compile-oap.sh --oap-cache
-</code></pre>
-<h3 id="running-oap-unit-tests">Running OAP Unit Tests</h3>
-<p>Setup building environment manually for intel MLlib, and if your default GCC version is before 7.0 also need export <code>CC</code> &amp; <code>CXX</code> before using <code>mvn</code>, run</p>
-<pre><code>$ export CXX=$OAP_HOME/dev/thirdparty/gcc7/bin/g++
-$ export CC=$OAP_HOME/dev/thirdparty/gcc7/bin/gcc
-$ export ONEAPI_ROOT=/opt/intel/inteloneapi
-$ source /opt/intel/inteloneapi/daal/2021.1-beta07/env/vars.sh
-$ source /opt/intel/inteloneapi/tbb/2021.1-beta07/env/vars.sh
-$ source /tmp/oneCCL/build/_install/env/setvars.sh
-</code></pre>
-<p>Run all the tests:</p>
-<pre><code>$ mvn clean test
-</code></pre>
-<p>Run Specified OAP Module Unit Test, such as <code>oap-cache</code>:</p>
-<pre><code>$ mvn clean -pl com.intel.oap:oap-cache -am test
 
-</code></pre>
-<h3 id="building-sql-index-and-data-source-cache-with-pmem">Building SQL Index and Data Source Cache with PMem</h3>
-<h4 id="prerequisites-for-building-with-pmem-support">Prerequisites for building with PMem support</h4>
-<p>When using SQL Index and Data Source Cache with PMem, finish steps of <a href="#prerequisites-for-building">Prerequisites for building</a> to ensure needed dependencies have been installed.</p>
-<h4 id="building-package">Building package</h4>
-<p>You can build OAP with PMem support with command below:</p>
-<pre><code>$ sh $OAP_HOME/dev/compile-oap.sh
-</code></pre>
-<p>Or run:</p>
-<pre><code>$ mvn clean -q -Ppersistent-memory -Pvmemcache -DskipTests package
-</code></pre>
-<h2 id="contributing">Contributing</h2>
-<p>This session introduces what is required before submitting a code change to OAP.</p>
-<ul>
-<li>
-<p>We continue to use the Github <strong>Issues</strong> to track the new features/tasks/issues.​</p>
-</li>
-<li>
-<p>For every commit, we need an issue id for the commit. ​</p>
-</li>
-<li>
-<p>Format the log message as following: <strong>[OAP-IssuesId][optional:ModuleName] detailed message</strong>​ </p>
-</li>
-</ul>
-<p>like [OAP-1406][rpmem-shuffle]Add shuffle block removing operation within one Spark context </p>
-<ul>
-<li>
-<p>Always merge your pull request as a single commit and the commit message follow the above format.​</p>
-</li>
-<li>
-<p>The formal features names in 0.9 are: <strong>SQL Index</strong>, <strong>SQL Data Source Cache</strong>, <strong>Native SQL Engine</strong>, <strong>Unified Arrow Data Source</strong>, <strong>RDD Cache PMem Extension</strong>, <strong>RPMem Shuffle</strong>, <strong>Remote Shuffle</strong>, <strong>Intel MLlib</strong>.</p>
-</li>
-</ul>
-<p>We don’t strictly request the module id the same as the feature name. Please align in the feature members to use a consistent name in the log message.​</p>
-              
+<p>Building Specified OAP Module, such as <code>sql-ds-cache</code>, run:</p>
+<pre><code>$ sh $OAP_TOOLS_HOME/dev/compile-oap.sh --sql-ds-cache
+</code></pre></div>
             </div>
-          </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../Developer-Guide/" class="btn btn-neutral float-right" title="Developer Guide">Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
-        <a href="../OAP-Installation-Guide/" class="btn btn-neutral" title="OAP Installation Guide"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-      
-    </div>
-  
-
-  <hr/>
-
-  <div role="contentinfo">
-    <!-- Copyright etc -->
-    
-  </div>
-
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-</footer>
-      
         </div>
-      </div>
 
-    </section>
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
 
-  </div>
-
-  <div class="rst-versions" role="note" aria-label="versions">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      
-      
-        <span><a href="../OAP-Installation-Guide/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="../Developer-Guide/" style="color: #fcfcfc">Next &raquo;</a></span>
-      
-    </span>
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
 </div>
-    <script>var base_url = '..';</script>
-    <script src="../js/theme.js" defer></script>
-      <script src="../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
-            SphinxRtdTheme.Navigation.enable(true);
-        };
-    </script>
 
-</body>
+    </body>
 </html>
