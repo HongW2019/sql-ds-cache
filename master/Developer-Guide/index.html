@@ -1,143 +1,120 @@
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  
-  
-  <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Developer Guide - SQL DS Cache - master</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Developer Guide - SQL DS Cache</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../extra.css" rel="stylesheet">
 
-  <link rel="stylesheet" href="../css/theme.css" />
-  <link rel="stylesheet" href="../css/theme_extra.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
-  
-  <script>
-    // Current page data
-    var mkdocs_page_name = "Developer Guide";
-    var mkdocs_page_input_path = "Developer-Guide.md";
-    var mkdocs_page_url = null;
-  </script>
-  
-  <script src="../js/jquery-2.1.1.min.js" defer></script>
-  <script src="../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script> 
-  
-</head>
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-<body class="wy-body-for-nav" role="document">
+            ga('create', 'UA-125166209-1', 'oap-project.github.io');
+            ga('send', 'pageview');
+        </script> 
+    </head>
 
-  <div class="wy-grid-for-nav">
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">SQL DS Cache</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-    
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-    <div class="wy-side-scroll">
-      <div class="wy-side-nav-search">
-        <a href=".." class="icon icon-home"> SQL DS Cache - master</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
-  </form>
-</div>
-      </div>
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../User-Guide/" class="nav-link">User Guide</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../Advanced-Configuration/" class="nav-link">Advanced Configuration</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../OAP-Installation-Guide/" class="nav-link">OAP Installation Guide</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../OAP-Developer-Guide/" class="nav-link">OAP Developer Guide</a>
+                            </li>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">Developer Guide</a>
+                            </li>
+                        </ul>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../User-Guide/">User Guide</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../Advanced-Configuration/">Advanced Configuration</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../OAP-Installation-Guide/">OAP Installation Guide</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../OAP-Developer-Guide/">OAP Developer Guide</a>
-                    </li>
-                </ul>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Developer Guide</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#building">Building</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#building-sql-index-and-data-source-cache">Building SQL Index and  Data Source Cache</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#running-tests">Running Tests</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#building-with-intel-optanetm-dc-persistent-memory-module">Building with Intel® Optane™ DC Persistent Memory Module</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#prerequisites-for-building-with-pmem-support">Prerequisites for building with PMem support</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#memkind-installation">memkind installation</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#vmemcache-installation">vmemcache installation</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#plasma-installation">Plasma installation</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#building-the-package">Building the package</a>
-    </li>
-        </ul>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#enabling-numa-binding-for-pmem-in-spark">Enabling NUMA binding for PMem in Spark</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#rebuilding-spark-packages-with-numa-binding-patch">Rebuilding Spark packages with NUMA binding patch</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#other-names-and-brands-may-be-claimed-as-the-property-of-others">*Other names and brands may be claimed as the property of others.</a>
-    </li>
-        </ul>
-    </li>
-        </ul>
-    </li>
-    </ul>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="" href="../../">Version Selector</a>
-                    </li>
-                </ul>
-      </div>
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../OAP-Developer-Guide/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" class="nav-link disabled">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/oap-project/sql-ds-cache.git/edit/master/docs/Developer-Guide.md" class="nav-link">Edit on Fork on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
     </div>
-    </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="..">SQL DS Cache - master</a>
-      </nav>
-
-      
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="..">Docs</a> &raquo;</li>
     
-      
-    
-    <li>Developer Guide</li>
-    <li class="wy-breadcrumbs-aside">
-      
-    </li>
-  </ul>
-  
-  <hr/>
-</div>
-          <div role="main">
-            <div class="section">
-              
-                <h1 id="developer-guide">Developer Guide</h1>
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#developer-guide" class="nav-link">Developer Guide</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#building" class="nav-link">Building</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#enabling-numa-binding-for-pmem-in-spark" class="nav-link">Enabling NUMA binding for PMem in Spark</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="developer-guide">Developer Guide</h1>
 <p>This document is a supplement to the whole <a href="../OAP-Developer-Guide/">OAP Developer Guide</a> for SQL Index and Data Source Cache.
 After following that document, you can continue more details for SQL Index and Data Source Cache.</p>
 <ul>
@@ -151,16 +128,20 @@ After following that document, you can continue more details for SQL Index and D
 <pre><code>git clone -b &lt;tag-version&gt;  https://github.com/Intel-bigdata/OAP.git
 cd OAP
 </code></pre>
+
 <p>Build the <code>oap-cache</code> package:</p>
 <pre><code>mvn clean -pl com.intel.oap:oap-cache -am package
 </code></pre>
+
 <h3 id="running-tests">Running Tests</h3>
 <p>Run all the tests:</p>
 <pre><code>mvn clean -pl com.intel.oap:oap-cache -am test
 </code></pre>
+
 <p>Run a specific test suite, for example <code>OapDDLSuite</code>:</p>
 <pre><code>mvn -pl com.intel.oap:oap-cache -am -DwildcardSuites=org.apache.spark.sql.execution.datasources.oap.OapDDLSuite test
 </code></pre>
+
 <p><strong>NOTE</strong>: Log level of unit tests currently default to ERROR, please override oap-cache/oap/src/test/resources/log4j.properties if needed.</p>
 <h3 id="building-with-intel-optanetm-dc-persistent-memory-module">Building with Intel® Optane™ DC Persistent Memory Module</h3>
 <h4 id="prerequisites-for-building-with-pmem-support">Prerequisites for building with PMem support</h4>
@@ -180,6 +161,7 @@ cd memkind
 make
 make install
 </code></pre>
+
 <h4 id="vmemcache-installation">vmemcache installation</h4>
 <p>To build vmemcache library from source, you can (for RPM-based linux as example):</p>
 <pre><code>git clone https://github.com/pmem/vmemcache
@@ -190,6 +172,7 @@ cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DCPACK_GENERATOR=rpm
 make package
 sudo rpm -i libvmemcache*.rpm
 </code></pre>
+
 <h4 id="plasma-installation">Plasma installation</h4>
 <p>To use optimized Plasma cache with OAP, you need following components:  </p>
 <p>(1) <code>libarrow.so</code>, <code>libplasma.so</code>, <code>libplasma_java.so</code>: dynamic libraries, will be used in Plasma client. <br />
@@ -210,6 +193,7 @@ cmake -DCMAKE_INSTALL_PREFIX=/usr/ -DCMAKE_BUILD_TYPE=Release -DARROW_BUILD_TEST
 make -j$(nproc)
 sudo make install -j$(nproc)
 </code></pre>
+
 <ul>
 <li>arrow-plasma-0.17.0.jar<br />
 <code>arrow-plasma-0.17.0.jar</code> is provided in Maven central repo, you can download <a href="https://repo1.maven.org/maven2/com/intel/arrow/arrow-plasma/0.17.0/arrow-plasma-0.17.0.jar">it</a> and copy to <code>$SPARK_HOME/jars</code> dir.</li>
@@ -218,16 +202,20 @@ sudo make install -j$(nproc)
 <pre><code>cd /tmp/arrow/java
 mvn clean -q -pl plasma -DskipTests install
 </code></pre>
+
 <h4 id="building-the-package">Building the package</h4>
 <p>You need to add <code>-Ppersistent-memory</code> to build with PMem support. For <code>noevict</code> cache strategy, you also need to build with <code>-Ppersistent-memory</code> parameter.</p>
 <pre><code>mvn clean -q -pl com.intel.oap:oap-cache -am  -Ppersistent-memory -DskipTests package
 </code></pre>
+
 <p>For vmemcache cache strategy, please build with command:</p>
 <pre><code>mvn clean -q -pl com.intel.oap:oap-cache -am -Pvmemcache -DskipTests package
 </code></pre>
+
 <p>Build with this command to use all of them:</p>
 <pre><code>mvn clean -q -pl com.intel.oap:oap-cache -am  -Ppersistent-memory -Pvmemcache -DskipTests package
 </code></pre>
+
 <h2 id="enabling-numa-binding-for-pmem-in-spark">Enabling NUMA binding for PMem in Spark</h2>
 <h3 id="rebuilding-spark-packages-with-numa-binding-patch">Rebuilding Spark packages with NUMA binding patch</h3>
 <p>When using PMem as a cache medium apply the <a href="https://www.kernel.org/doc/html/v4.18/vm/numa.html">NUMA</a> binding patch <a href="../numa-binding-spark-3.0.0.patch">numa-binding-spark-3.0.0.patch</a> to Spark source code for best performance.</p>
@@ -241,60 +229,92 @@ mvn clean -q -pl plasma -DskipTests install
 </ol>
 <pre><code>git apply  numa-binding-spark-3.0.0.patch
 </code></pre>
+
 <ol>
 <li>Add these configuration items to the Spark configuration file $SPARK_HOME/conf/spark-defaults.conf to enable NUMA binding.</li>
 </ol>
 <pre><code>spark.yarn.numa.enabled true 
 </code></pre>
+
 <p><strong>NOTE</strong>: If you are using a customized Spark, you will need to manually resolve the conflicts.</p>
-<h6 id="other-names-and-brands-may-be-claimed-as-the-property-of-others">*Other names and brands may be claimed as the property of others.</h6>
-              
+<h6 id="other-names-and-brands-may-be-claimed-as-the-property-of-others">*Other names and brands may be claimed as the property of others.</h6></div>
             </div>
-          </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-      
-        <a href="../OAP-Developer-Guide/" class="btn btn-neutral" title="OAP Developer Guide"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-      
-    </div>
-  
-
-  <hr/>
-
-  <div role="contentinfo">
-    <!-- Copyright etc -->
-    
-  </div>
-
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-</footer>
-      
         </div>
-      </div>
 
-    </section>
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
 
-  </div>
-
-  <div class="rst-versions" role="note" aria-label="versions">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      
-      
-        <span><a href="../OAP-Developer-Guide/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-    </span>
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
 </div>
-    <script>var base_url = '..';</script>
-    <script src="../js/theme.js" defer></script>
-      <script src="../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
-            SphinxRtdTheme.Navigation.enable(true);
-        };
-    </script>
 
-</body>
+    </body>
 </html>
