@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Architecture Overview - SQL DS Cache - master</title>
+  <title>Architecture Overview - SQL DS Cache - 1.1.0</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -38,7 +38,7 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-        <a href=".." class="icon icon-home"> SQL DS Cache - master</a>
+        <a href=".." class="icon icon-home"> SQL DS Cache - 1.1.0</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
@@ -80,7 +80,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="..">SQL DS Cache - master</a>
+        <a href="..">SQL DS Cache - 1.1.0</a>
       </nav>
 
       
@@ -123,6 +123,7 @@
     where (date='20200801' and ss_customer='xxx' and ss_item_sk='806486’)
     limit 10
 </code></pre>
+
 <p>Interactive queries usually process a large data set but return a small portion of data filtering for a specific condition. By creating and storing a full B+ Tree index for key columns and using a smart fine-grained in-memory data caching strategy, we can boost Spark SQL interactive queries to seconds and even sub-seconds.</p>
 <p>By properly using index and cache, the performance of some interactive queries can possibly be improved by order of magnitude.</p>
 <h3 id="usage-scenario-2-batch-processing-jobs">Usage Scenario 2 -- Batch processing jobs</h3>
