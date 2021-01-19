@@ -1,145 +1,72 @@
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
-  
-  <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Advanced Configuration - SQL DS Cache - master</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Advanced Configuration - SQL DS Cache</title>
+    <link href="/css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="/css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="/css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link href="../extra.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
 
-  <link rel="stylesheet" href="../css/theme.css" />
-  <link rel="stylesheet" href="../css/theme_extra.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
-  
-  <script>
-    // Current page data
-    var mkdocs_page_name = "Advanced Configuration";
-    var mkdocs_page_input_path = "Advanced-Configuration.md";
-    var mkdocs_page_url = null;
-  </script>
-  
-  <script src="../js/jquery-2.1.1.min.js" defer></script>
-  <script src="../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script> 
-  
+    <script src="/js/jquery-3.2.1.min.js"></script>
+    <script src="/js/bootstrap-3.3.7.min.js"></script>
+    <script src="/js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "Advanced Configuration", url: "#advanced-configuration", children: [
+              {title: "Additional Cache Strategies", url: "#additional-cache-strategies" },
+              {title: "Index and Data Cache Separation", url: "#index-and-data-cache-separation" },
+              {title: "Cache Hot Tables", url: "#cache-hot-tables" },
+              {title: "Column Vector Cache", url: "#column-vector-cache" },
+              {title: "Large Scale and Heterogeneous Cluster Support", url: "#large-scale-and-heterogeneous-cluster-support" },
+          ]},
+        ];
+
+    </script>
+    <script src="/js/base.js"></script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-125166209-1', 'oap-project.github.io');
+        ga('send', 'pageview');
+    </script> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
 
-  <div class="wy-grid-for-nav">
 
+
+<div class="container-fluid wm-page-content">
     
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-    <div class="wy-side-scroll">
-      <div class="wy-side-nav-search">
-        <a href=".." class="icon icon-home"> SQL DS Cache - master</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
-  </form>
-</div>
-      </div>
-
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../User-Guide/">User Guide</a>
-                    </li>
-                </ul>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Advanced Configuration</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#additional-cache-strategies">Additional Cache Strategies</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#use-pmem-cache">Use PMem Cache</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#prerequisites">Prerequisites</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#configuration-for-numa">Configuration for NUMA</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#configuration-for-pmem">Configuration for PMem</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#guava-cache">Guava cache</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#noevict-cache">Noevict cache</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#vmemcache">Vmemcache</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#configure-to-enable-pmem-cache">Configure to enable PMem cache</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#verify-pmem-cache-functionality">Verify PMem cache functionality</a>
-    </li>
-        </ul>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#index-and-data-cache-separation">Index and Data Cache Separation</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#cache-hot-tables">Cache Hot Tables</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#column-vector-cache">Column Vector Cache</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#large-scale-and-heterogeneous-cluster-support">Large Scale and Heterogeneous Cluster Support</a>
-    </li>
-    </ul>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../OAP-Installation-Guide/">OAP Installation Guide</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../OAP-Developer-Guide/">OAP Developer Guide</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../Developer-Guide/">Developer Guide</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="" href="../../">Version Selector</a>
-                    </li>
-                </ul>
-      </div>
-    </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="..">SQL DS Cache - master</a>
-      </nav>
-
-      
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="..">Docs</a> &raquo;</li>
-    
-      
-    
-    <li>Advanced Configuration</li>
-    <li class="wy-breadcrumbs-aside">
-      
-    </li>
-  </ul>
-  
-  <hr/>
-</div>
-          <div role="main">
-            <div class="section">
-              
-                <h1 id="advanced-configuration">Advanced Configuration</h1>
+    <h1><strong>Advanced Configuration</strong></h1>
+    <hr>
+    <h1 id="advanced-configuration">Advanced Configuration</h1>
 <p>In addition to usage information provided in <a href="../User-Guide/">User Guide</a>, we provide more strategies for SQL Index and Data Source Cache in this section.</p>
 <p>Their needed dependencies like <strong><em>Memkind</em></strong> ,<strong><em>Vmemcache</em></strong> and <strong><em>Plasma</em></strong> can be automatically installed when following <a href="../OAP-Installation-Guide/">OAP Installation Guide</a>, corresponding feature jars can be found under <code>$HOME/miniconda2/envs/oapenv/oap_jars</code>.</p>
 <ul>
@@ -218,6 +145,7 @@ Or you can refer to <a href="../OAP-Developer-Guide/">OAP Developer-Guide</a>, t
   mount -o dax /dev/pmem0 /mnt/pmem0
   mount -o dax /dev/pmem1 /mnt/pmem1
 </code></pre>
+
 <p>In this case file systems are generated for 2 NUMA nodes, which can be checked by "numactl --hardware". For a different number of NUMA nodes, a corresponding number of namespaces should be created to assure correct file system paths mapping to NUMA nodes.</p>
 <p>For more information you can refer to <a href="https://software.intel.com/content/www/us/en/develop/articles/quick-start-guide-configure-intel-optane-dc-persistent-memory-on-linux.html">Quick Start Guide: Provision Intel® Optane™ DC Persistent Memory</a></p>
 <h4 id="configuration-for-numa">Configuration for NUMA</h4>
@@ -242,6 +170,7 @@ Or you can refer to <a href="../OAP-Developer-Guide/">OAP Developer-Guide</a>, t
   &lt;/numanode&gt;
 &lt;/persistentMemoryPool&gt;
 </code></pre>
+
 <h3 id="guava-cache">Guava cache</h3>
 <p>Guava cache is based on memkind library, built on top of jemalloc and provides memory characteristics. To use it in your workload, follow <a href="#prerequisites">prerequisites</a> to set up PMem hardware correctly, also make sure memkind library installed. Then follow configurations below.</p>
 <p><strong>NOTE</strong>: <code>spark.executor.sql.oap.cache.persistent.memory.reserved.size</code>: When we use PMem as memory through memkind library, some portion of the space needs to be reserved for memory management overhead, such as memory segmentation. We suggest reserving 20% - 25% of the available PMem capacity to avoid memory allocation failure. But even with an allocation failure, OAP will continue the operation to read data from original input data and will not cache the data block.</p>
@@ -269,10 +198,12 @@ spark.executor.extraClassPath     ./oap-cache-&lt;version&gt;-with-spark-&lt;ver
 spark.driver.extraClassPath       $HOME/miniconda2/envs/oapenv/oap_jars/oap-cache-&lt;version&gt;-with-spark-&lt;version&gt;.jar:$HOME/miniconda2/envs/oapenv/oap_jars/oap-common-&lt;version&gt;-with-spark-&lt;version&gt;.jar
 
 </code></pre>
+
 <p>Memkind library also support DAX KMEM mode. Refer to <a href="https://github.com/memkind/memkind#kernel">Kernel</a>, this chapter will guide how to configure PMem as system RAM. Or <a href="https://pmem.io/2020/01/20/memkind-dax-kmem.html">Memkind support for KMEM DAX option</a> for more details.</p>
 <p>Please note that DAX KMEM mode need kernel version 5.x and memkind version 1.10 or above. If you choose KMEM mode, change memory manager from <code>pm</code> to <code>kmem</code> as below.</p>
 <pre><code>spark.sql.oap.cache.memory.manager           kmem
 </code></pre>
+
 <h3 id="noevict-cache">Noevict cache</h3>
 <p>The noevict cache strategy is also supported in OAP based on the memkind library for PMem.</p>
 <p>To use it in your workload, follow <a href="#prerequisites">prerequisites</a> to set up PMem hardware correctly, also make sure memkind library installed. Then follow the configuration below.</p>
@@ -297,6 +228,7 @@ spark.executor.extraClassPath     ./oap-cache-&lt;version&gt;-with-spark-&lt;ver
 spark.driver.extraClassPath       $HOME/miniconda2/envs/oapenv/oap_jars/oap-cache-&lt;version&gt;-with-spark-&lt;version&gt;.jar:$HOME/miniconda2/envs/oapenv/oap_jars/oap-common-&lt;version&gt;-with-spark-&lt;version&gt;.jar
 
 </code></pre>
+
 <h3 id="vmemcache">Vmemcache</h3>
 <ul>
 <li>Make sure <a href="https://github.com/pmem/vmemcache">Vmemcache</a> library has been installed on every cluster worker node if vmemcache strategy is chosen for PMem cache. If you have finished <a href="../OAP-Installation-Guide/">OAP-Installation-Guide</a>, vmemcache library will be automatically installed by Conda.</li>
@@ -329,6 +261,7 @@ spark.executor.sql.oap.cache.persistent.memory.initial.size  256g
 # according to your cluster
 spark.executor.sql.oap.cache.guardian.memory.size            10g
 </code></pre>
+
 <p>The <code>vmem</code> cache strategy is based on libvmemcache (buffer based LRU cache), which provides a key-value store API. Follow these steps to enable vmemcache support in Data Source Cache.</p>
 <ul>
 <li><code>spark.executor.instances</code>: We suggest setting the value to 2X the number of worker nodes when NUMA binding is enabled. Each worker node runs two executors, each executor is bound to one of the two sockets, and accesses the corresponding PMem device on that socket.</li>
@@ -355,6 +288,7 @@ spark.executor.sql.oap.cache.guardian.memory.size            10g
 spark.oap.cache.strategy                                mix
 spark.sql.oap.cache.memory.manager                      offheap
 </code></pre>
+
 <p>The rest configuration you can refer to  <a href="../User-Guide/#use-dram-cache">Use DRAM Cache</a> </p>
 <ol>
 <li>PMem as cache media, <code>external</code> strategy as index &amp; data cache backend. </li>
@@ -366,6 +300,7 @@ spark.sql.oap.mix.data.cache.backend                    external
 spark.sql.oap.mix.index.cache.backend                   external
 
 </code></pre>
+
 <p>The rest configurations can refer to the configurations of <a href="../User-Guide/#use-pmem-cache">PMem Cache</a> and  <a href="../User-Guide/#Configuration-for-enabling-PMem-cache">External cache</a></p>
 <ol>
 <li>DRAM(<code>offheap</code>)/<code>guava</code> as <code>index</code> cache media and backend, PMem(<code>tmp</code>)/<code>external</code> as <code>data</code> cache media and backend. </li>
@@ -395,6 +330,7 @@ spark.sql.oap.orc.binary.cache.enabled                       true
 # for Parquet file format
 spark.sql.oap.parquet.binary.cache.enabled                   true
 </code></pre>
+
 <ol>
 <li>DRAM(<code>offheap</code>)/<code>guava</code> as <code>index</code> cache media and backend, PMem(<code>pm</code>)/<code>guava</code> as <code>data</code> cache media and backend. </li>
 </ol>
@@ -422,6 +358,7 @@ spark.sql.oap.orc.binary.cache.enabled                       true
 # for Parquet file format
 spark.sql.oap.parquet.binary.cache.enabled                   true
 </code></pre>
+
 <h2 id="cache-hot-tables">Cache Hot Tables</h2>
 <p>Data Source Cache also supports caching specific tables by configuring items according to actual situations, these tables are usually hot tables.</p>
 <p>To enable caching specific hot tables, you can add the configuration below to <code>spark-defaults.conf</code>.</p>
@@ -430,6 +367,7 @@ spark.sql.oap.cache.table.list.enabled          true
 # Table lists using fiberCache actively
 spark.sql.oap.cache.table.list                  &lt;databasename&gt;.&lt;tablename1&gt;;&lt;databasename&gt;.&lt;tablename2&gt;
 </code></pre>
+
 <h2 id="column-vector-cache">Column Vector Cache</h2>
 <p>This document above use <strong>binary</strong> cache for Parquet as example, cause binary cache can improve cache space utilization compared to ColumnVector cache. When your cluster memory resources are abundant enough, you can choose ColumnVector cache to spare computation time. </p>
 <p>To enable ColumnVector data cache for Parquet file format, you should add the configuration below to <code>spark-defaults.conf</code>.</p>
@@ -438,6 +376,7 @@ spark.sql.oap.parquet.binary.cache.enabled             false
 # for parquet file format, enable ColumnVector cache
 spark.sql.oap.parquet.data.cache.enabled               true
 </code></pre>
+
 <h2 id="large-scale-and-heterogeneous-cluster-support">Large Scale and Heterogeneous Cluster Support</h2>
 <p><strong><em>NOTE:</em></strong> Only works with <code>external cache</code></p>
 <p>OAP influences Spark to schedule tasks according to cache locality info. This info could be of large amount in a <strong><em>large scale cluster</em></strong>, and how to schedule tasks in a <strong><em>heterogeneous cluster</em></strong> (some nodes with PMem, some without) could also be challenging.</p>
@@ -449,57 +388,13 @@ Currently we support <a href="https://redis.io/">Redis</a> as external DB servic
 spark.sql.oap.external.cache.metaDB.address            10.1.2.12
 spark.sql.oap.external.cache.metaDB.impl               org.apache.spark.sql.execution.datasources.RedisClient
 </code></pre>
-              
-            </div>
-          </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../OAP-Installation-Guide/" class="btn btn-neutral float-right" title="OAP Installation Guide">Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
-        <a href="../User-Guide/" class="btn btn-neutral" title="User Guide"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-      
-    </div>
-  
 
-  <hr/>
-
-  <div role="contentinfo">
-    <!-- Copyright etc -->
-    
-  </div>
-
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-</footer>
-      
-        </div>
-      </div>
-
-    </section>
-
-  </div>
-
-  <div class="rst-versions" role="note" aria-label="versions">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      
-      
-        <span><a href="../User-Guide/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="../OAP-Installation-Guide/" style="color: #fcfcfc">Next &raquo;</a></span>
-      
-    </span>
+  <br>
 </div>
-    <script>var base_url = '..';</script>
-    <script src="../js/theme.js" defer></script>
-      <script src="../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
-            SphinxRtdTheme.Navigation.enable(true);
-        };
-    </script>
+
+<footer class="col-md-12 wm-page-content">
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+</footer>
 
 </body>
 </html>
