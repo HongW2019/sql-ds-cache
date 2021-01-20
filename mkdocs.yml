@@ -1,0 +1,21 @@
+site_name: SQL DS Cache
+theme: null
+extra_css: [extra.css]
+theme_dir: mkdocs_windmill
+repo_name: 'Fork on GitHub'
+repo_url: 'https://github.com/oap-project/sql-ds-cache.git'
+google_analytics: ['UA-125166209-1', 'oap-project.github.io/sql-ds-cache']
+extra:
+    version: master
+    article_nav_top: false
+    article_nav_bottom: false
+
+
+pages:
+- Overview: index.md
+- User Guide: User-Guide.md
+- Advanced Configuration: Advanced-Configuration.md
+- OAP Installation Guide: OAP-Installation-Guide.md
+- OAP Developer Guide: OAP-Developer-Guide.md
+- Developer Guide: Developer-Guide.md
+
