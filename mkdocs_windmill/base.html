@@ -48,7 +48,7 @@
 
   {%- block scripts %}
     <script>
-      var base_url = '{{ base_url }}';
+      var base_url = './sql-ds-cache/';
       var is_top_frame = {% if is_top %}(window === window.parent){% else %}false{% endif %};
       {%- if page %}
         {# Include the first two levels of TOC data as a JS object, to be rendered in top frame #}
