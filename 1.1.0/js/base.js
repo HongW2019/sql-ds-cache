@@ -225,7 +225,7 @@ function loadVersion() {
  *function to switch versions
  */
 function switchVersion(opt) {
-  window.location = "/" + opt.value + "/index.html"
+  window.location = "./sql-ds-cache/" + opt.value + "/index.html"
 }
 
 /**
