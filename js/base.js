@@ -211,7 +211,7 @@ function loadVersion() {
         versionSelect.appendChild(opt);
       }
       var path = window.location.pathname;
-      var dir = path.split("/")[1];
+      var dir = path.split("/")[2];
       var idx = dir.indexOf("#");
       if (idx != -1) {
         dir = dir.substring(idx + 1, dir.length);
